@@ -1,0 +1,772 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"uni",
+				"uniqueId\tabc"
+			],
+			[
+				"togg",
+				"toggleClass\t.toggleClass()"
+			],
+			[
+				"redi",
+				"redisStorage\tabc"
+			],
+			[
+				"expres",
+				"expressSession\tabc"
+			],
+			[
+				"rq",
+				"require\tabc"
+			],
+			[
+				"cook",
+				"cookieParser\tabc"
+			],
+			[
+				"padd",
+				"paddingRight\tabc"
+			],
+			[
+				"pad",
+				"padStart\tabc"
+			],
+			[
+				"ha",
+				"handlebars\tabc"
+			],
+			[
+				"en",
+				"engine\tabc"
+			],
+			[
+				"Con",
+				"Content-Type\tabc"
+			],
+			[
+				"createSer",
+				"http.createServer"
+			],
+			[
+				"obj",
+				"object\tabc"
+			],
+			[
+				"ini",
+				"initialize2\tabc"
+			],
+			[
+				"v",
+				"values\tabc"
+			],
+			[
+				"forin",
+				"forin\tloop for in"
+			],
+			[
+				"foreach",
+				"cld.forEach()\t _ Collection"
+			],
+			[
+				"JSON",
+				"JSON.stringify\tabc"
+			],
+			[
+				"com",
+				"comprator\tabc"
+			],
+			[
+				"stri",
+				"stringify\t(array.js)"
+			],
+			[
+				"diff",
+				"difference\tabc"
+			],
+			[
+				"fi",
+				"filter\tfn "
+			],
+			[
+				"ReactDO",
+				"ReactDOM.render\t(index.html)"
+			],
+			[
+				"dgi",
+				"document.getElementById('root\tabc"
+			],
+			[
+				"script",
+				"script\tabc"
+			],
+			[
+				"numg",
+				"numberGenerator\t{} "
+			],
+			[
+				"it",
+				"iterator\tabc"
+			],
+			[
+				"O",
+				"Object\t(typeof.js)"
+			],
+			[
+				"get",
+				"getOwnPropertyNames"
+			],
+			[
+				"app",
+				"apply\tabc"
+			],
+			[
+				"cal",
+				"callLength\tabc"
+			],
+			[
+				"bef",
+				"before\tabc"
+			],
+			[
+				"wi",
+				"without\tabc"
+			],
+			[
+				"isE",
+				"isEqualObject\tabc"
+			],
+			[
+				"eq",
+				"equalObject\tabc"
+			],
+			[
+				"arr",
+				"arrEqual\tabc"
+			],
+			[
+				"ob",
+				"objectIndexBy\tabc"
+			],
+			[
+				"sorted",
+				"sortedIndexBy\tabc"
+			],
+			[
+				"arrF",
+				"arrFilter\tabc"
+			],
+			[
+				"last",
+				"lastIndexOf\tabc"
+			],
+			[
+				"ldsiof",
+				"ld.lastIndexOf()\t _ Array"
+			],
+			[
+				"ldind",
+				"ld.indexOf()\t _ Array"
+			],
+			[
+				"dept",
+				"depthFunc\tabc"
+			],
+			[
+				"dep",
+				"depth\tabc"
+			],
+			[
+				"find",
+				"findIndex"
+			],
+			[
+				"sa",
+				"sans-serif"
+			],
+			[
+				"fsw",
+				"fs.writeFileSync"
+			],
+			[
+				"appget",
+				"app.get(path, callback [, callback ...])"
+			],
+			[
+				"copy",
+				"fs.copyFile"
+			],
+			[
+				"n",
+				"node.fs.readdir\tSnippet: fs.readdir"
+			],
+			[
+				"node",
+				"node.http.createServer\tSnippet: HTTP Create Server"
+			],
+			[
+				"assertse",
+				"assert.strictEqual"
+			],
+			[
+				"jq",
+				"jQuery.ajaxSetup\tjQuery.ajaxSetup"
+			],
+			[
+				"class",
+				"class〔keyword〕"
+			],
+			[
+				"doc",
+				"document〔variable〕"
+			],
+			[
+				"ld",
+				"ld.partition()\t _ Collection"
+			],
+			[
+				"chu",
+				"chunk"
+			],
+			[
+				"cl",
+				"clone\t.clone()"
+			],
+			[
+				"cha",
+				"chai.js\t(index.html)"
+			],
+			[
+				"as",
+				"assert"
+			],
+			[
+				"for",
+				"for...in\t(Входящие.st)"
+			],
+			[
+				"promi",
+				"Promise\t[class: Promise<+R>]"
+			],
+			[
+				"f",
+				"find\t.find()"
+			],
+			[
+				"asy",
+				"async_function"
+			],
+			[
+				"function",
+				"function"
+			],
+			[
+				"fn",
+				"async_function"
+			],
+			[
+				"whi",
+				"while"
+			],
+			[
+				"fo",
+				"for-k"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"wcl",
+				"Console Wrap: Create logs"
+			],
+			[
+				"uppc",
+				"Convert Case: Upper Case"
+			],
+			[
+				"upp",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"req",
+				"Require"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"rena",
+				"Rename File"
+			],
+			[
+				"pa",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"pack",
+				"PackageSync: Backup/Restore - Backup Packages To Zip (Recommended)"
+			],
+			[
+				"ssj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Snippet: ",
+				"Snippet: It"
+			],
+			[
+				"renam",
+				"Rename File"
+			],
+			[
+				"new f",
+				"File: New File Relative to Current View"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"requ",
+				"Require"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"wc",
+				"Console Wrap: Create logs"
+			],
+			[
+				"pac",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"relo pl",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"ss",
+				"Set Syntax: CSS3"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"node",
+				"Build With: Nodejs"
+			],
+			[
+				"ssc",
+				"Set Syntax: CSS3"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"deb",
+				"Debugger: Start"
+			],
+			[
+				"de",
+				"Debugger: Install Adapters"
+			],
+			[
+				"deg",
+				"Debugger: Start"
+			],
+			[
+				"wcl\t",
+				"Console Wrap: Create logs"
+			],
+			[
+				"package con",
+				"Package Control: Disable Package"
+			],
+			[
+				"emmew",
+				"Emmet: Wrap With Abbreviation"
+			],
+			[
+				"packagesyn",
+				"PackageSync: Backup/Restore - Backup Packages To Zip (Recommended)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"PackageSync: Backup/Restore - Backup Packages To Zip (Recommended)"
+			],
+			[
+				"disba",
+				"Package Control: Disable Package"
+			],
+			[
+				"packagesync",
+				"PackageSync: Backup/Restore - Restore Packages From Zip (Recommended)"
+			],
+			[
+				"Liver",
+				"Snippet: Insert livereload.js script"
+			],
+			[
+				"live",
+				"Snippet: Insert livereload.js script"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 520.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/OpenServer/domains/test/node/gulp/my-gulp"
+	],
+	"file_history":
+	[
+		"/C/OpenServer/domains/test/node/gulp/my-gulp/README.md",
+		"/C/OpenServer/domains/test/node/gulp/modular-gulp/.jshintrc",
+		"/C/OpenServer/domains/test/node/gulp/modular-gulp/stylus.template.mustache",
+		"/C/OpenServer/domains/test/node/gulp/modular-gulp/package.json",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/deburr.js",
+		"/C/OpenServer/domains/test/html-css/flexbox/Dashboard/css/style.css",
+		"/C/OpenServer/domains/test/html-css/flexbox/Dashboard/index.html",
+		"/C/OpenServer/domains/test/html-css/flexbox/Dashboard/js/script.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/toupper.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/tolower.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/startcase.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/camelcase.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/lowercase.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/uppercase.js",
+		"/C/OpenServer/domains/test/node/node/package.json",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/package.json",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/node_modules/lodash/pullAll.js",
+		"/C/OpenServer/domains/test/node/node/node-fs.js",
+		"/C/OpenServer/domains/test/node/node/express-test.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/pad.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/string/endswith.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/seq/value.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/seq/reverse.js",
+		"/C/OpenServer/domains/test/node/node/files/data3.txt",
+		"/C/OpenServer/domains/test/node/node/files/data2.txt",
+		"/C/OpenServer/domains/test/node/node/files/data1.txt",
+		"/C/OpenServer/domains/test/node/node/views/home.hbs",
+		"/C/OpenServer/domains/test/node/node/views/main.pug",
+		"/C/OpenServer/domains/test/node/node/views/mixins/_button.pug",
+		"/C/OpenServer/domains/test/node/node/static/css/style.css",
+		"/C/OpenServer/domains/test/node/node/views/mixin/_button.pug",
+		"/C/OpenServer/domains/test/node/node/views/contacts.pug",
+		"/C/OpenServer/domains/test/node/node/views/includes/_list.pug",
+		"/C/OpenServer/domains/test/node/node/views/layouts/main.hbs",
+		"/C/OpenServer/domains/test/node/node/views/partials/advantages.hbs",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/forinright.js",
+		"/C/OpenServer/domains/test/node/node/express-handlebars-test.js",
+		"/C/OpenServer/domains/test/node/node/views/partials/advantages.handlebars",
+		"/C/OpenServer/domains/test/node/node/views/layouts/main.handlebars",
+		"/C/OpenServer/domains/test/node/node/node-http.js",
+		"/C/OpenServer/domains/test/node/node-http.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/seq/next.js",
+		"/C/OpenServer/domains/test/node/server.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/topairs.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/findkey.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/omitby.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/invertby.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/pick.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/valuesin.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/object/keysin.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/math/round.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/date/now.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/number/inrange.js",
+		"/C/OpenServer/domains/test/javascript/lodash/function.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/collection/includes.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/collection/foreach.js",
+		"/C/OpenServer/domains/test/node/electron/ShoppingList/package.json",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/collection/map.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/math/add.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/math/meanby.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/math/sum.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/math/min.js",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/shuffle.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/collection/size.js",
+		"/C/OpenServer/domains/test/javascript/lodash/array.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/node_modules/lodash/function.js",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Snippet/javascript/es6-forin.sublime-snippet",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/unionwith.js",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Snippet/javascript/es6-forof.sublime-snippet",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Snippet/javascript/es6-for++.sublime-snippet",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Snippet/javascript/function-anonymous.sublime-snippet",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/es6-for--.sublime-snippet",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Snippet/javascript/es6-for--.sublime-snippet",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/Tern.sublime-settings",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/xor.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/takeright.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/takewhile.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/flatten.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/flattendepth.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/initial.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/last.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/first.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/unzipwith.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/zipwith.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/without.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/zip.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/take.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/sorteduniq.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/difference.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/differenceby.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/findindex.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/slice.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/fill.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/drop.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/concat.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/compact.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/chunk.js",
+		"/C/OpenServer/domains/test/javascript/es6-or-lodash-and-underscore/array/dropright.js",
+		"/C/OpenServer/domains/test/javascript/native/typeof.js",
+		"/C/OpenServer/domains/test/javascript/react/game/src/index.css",
+		"/C/OpenServer/domains/test/javascript/react/game/src/index.js",
+		"/C/OpenServer/domains/test/javascript/Object/equal-object.js",
+		"/C/OpenServer/domains/test/javascript/Object/my_new.js",
+		"/C/OpenServer/domains/test/javascript/bdd/index.html",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-1.js",
+		"/C/Users/dzendev/Desktop/react/like_button.js",
+		"/C/Users/dzendev/Desktop/6668a1f6986742109c00a581ce704605-f6c882b6ae18bde42dcf6fdb751aae93495a2275/index.html",
+		"/C/Users/dzendev/Desktop/react/index.html",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-4.js",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-6.js",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-2.js",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-5.js",
+		"/C/OpenServer/domains/test/javascript/pattern/dev/js/iterator/iterator-3.js",
+		"/C/OpenServer/domains/test/javascript/pattern/build/js/iterator/iterator-1.js",
+		"/C/OpenServer/domains/test/javascript/array_set_map/anagram.js",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/C/Users/dzendev/AppData/Roaming/Sublime Text 3/Packages/User/NodeRequirer.sublime-settings",
+		"/C/OpenServer/domains/test/javascript/lodash/index.html",
+		"/C/OpenServer/domains/test/javascript/lodash/.sublime-completions",
+		"/C/OpenServer/domains/test/javascript/lodash/package.json",
+		"/C/OpenServer/domains/test/node/1234/accert.js",
+		"/C/OpenServer/domains/test/javascript/bdd/test.js",
+		"/C/Users/dzendev/Desktop/1.js",
+		"/C/OpenServer/domains/test/node/1234/1234.sublime-project",
+		"/C/OpenServer/domains/test/node/111/.sublime-project"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.Debugger":
+	{
+		"height": 232.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 253.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Nodejs/Nodejs.sublime-build",
+	"project": "my-gulp.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"debu",
+				"string\\deburr.js"
+			],
+			[
+				"tolowe",
+				"string\\tolower.js"
+			],
+			[
+				"pacak",
+				"package.json"
+			],
+			[
+				"pa",
+				"node_modules\\lodash\\pullAll.js"
+			],
+			[
+				"",
+				"string\\endswith.js"
+			],
+			[
+				"fun",
+				"node_modules\\lodash\\function.js"
+			],
+			[
+				"s",
+				"C:\\OpenServer\\domains\\test\\javascript\\lodash\\script.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
