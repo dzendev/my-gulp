@@ -1,1 +1,1 @@
-{"version":3,"names":[],"mappings":"","sources":["code.js"],"sourcesContent":["export default function func() {\r\n\treturn 'test';\r\n};"],"file":"code.js"}
+{"version":3,"names":[],"mappings":"","sources":["code.js"],"sourcesContent":["function func() {\r\n\treturn 'test';\r\n}\r\nexport {func};"],"file":"code.js"}

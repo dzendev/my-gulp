@@ -21,6 +21,9 @@ const glob            = require('glob');
 const babel           = require('gulp-babel');
 const sourcemaps      = require("gulp-sourcemaps");
 const uglify          = require('gulp-uglify');
+const iconfont        = require('gulp-iconfont');
+const iconfontCss     = require('gulp-iconfont-css');
+const webpack         = require('webpack-stream');
 const browserSync     = require('browser-sync');
 const env             = process.env.NODE_ENV;
 
@@ -132,6 +135,29 @@ function spriteSvg() {
 		});
 }
 
+function svgToFont() {
+	const runTimestamp = Math.round(Date.now()/1000);
+	return gulp.src(['dev/img/sprite-svg/*.svg'])
+		.pipe(iconfontCss({
+			fontName: 'svgfont',
+			// path: 'app/assets/css/templates/_icons.scss',
+			targetPath: '../../dev/stylus/_svg-font.css',
+			fontPath: '../fonts/',
+			cssClass: 'svg-font'
+		}))
+		.pipe(iconfont({
+			fontName: 'svgfont', // required
+			prependUnicode: true, // recommended option
+			formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'], // default, 'woff2' and 'svg' are available
+			timestamp: runTimestamp, // recommended to get consistent builds when watching files
+		}))
+			.on('glyphs', function(glyphs, options) {
+				// CSS templating, e.g.
+				console.log(glyphs, options);
+			})
+		.pipe(gulp.dest('build/fonts/'));
+}
+
 function es6() {
 	return gulp.src('dev/js/**/*.js')
 		.pipe(plumberNotifier())
@@ -153,6 +179,30 @@ function es6() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function es6modules() {
+	return gulp.src('dev/js/**/*.js')
+		.pipe(plumberNotifier())
+		.pipe(webpack({
+			entry: {
+				app: env === 'production' ? ['babel-polyfill', './dev/js/app.js'] : './dev/js/app.js',
+				script: './dev/js/script.js'
+			},
+			mode: "development",
+			output: {
+				filename: '[name].js',
+			}
+		}))
+		.pipe(pipeIf(env === 'production', babel({
+			presets: [
+				["env", {"modules": false}]
+			]
+		})))
+		.pipe(pipeIf(env === 'production', uglify()))
+		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
+		.pipe(gulp.dest('build/js'))
+		.pipe(browserSync.reload({ stream: true }));
+}
+
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', html);
 	gulp.watch('dev/img/**/*.*', img);
@@ -163,6 +213,18 @@ function watch() {
 
 exports.clear = clear;
 exports.sprite = gulp.parallel(spritePng, spriteSvg);
+exports.font = svgToFont;
 exports.move = gulp.parallel(moveFont, moveJS);
-exports.build = gulp.series(html);
-exports.default = gulp.parallel(sync, html, img, css, es6, watch);
+
+const task = [
+	html,
+	img,
+	css,
+	// es6,
+	es6modules
+];
+
+exports.build = gulp.series(clear, gulp.parallel(html, img, css, es6));
+const dev = gulp.parallel(sync, ...task, watch);
+exports.dev = dev;
+exports.default = dev;
