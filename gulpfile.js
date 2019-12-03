@@ -5,6 +5,9 @@ const pug             = require('gulp-pug');
 const plumberNotifier = require('gulp-plumber-notifier');
 const htmlReplace     = require('gulp-html-replace');
 const imagemin        = require('gulp-imagemin');
+const spritesmith     = require('gulp.spritesmith');
+const svgSprite       = require('gulp-svg-sprite');
+const buffer          = require('vinyl-buffer');
 const newer           = require('gulp-newer');
 const stylus          = require('gulp-stylus');
 const gcmq            = require('gulp-group-css-media-queries');
@@ -89,6 +92,46 @@ function css() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function spritePng() {
+	var spriteData = gulp.src('dev/img/sprite-png/*.png').pipe(spritesmith({
+				imgName: 'sprite.png',
+				cssName: '_sprite.styl',
+				cssFormat: 'stylus',
+				imgPath: '../img/sprite.png'
+		}));
+		spriteData.img
+			.pipe(buffer())
+			.pipe(pipeIf(env === 'production', imagemin()))
+			.pipe(gulp.dest('build/img'));
+		spriteData.css
+			.pipe(gulp.dest('dev/stylus'));
+}
+
+function spriteSvg() {
+	return gulp.src('dev/img/sprite-svg/*.svg')
+		.pipe(svgSprite({
+			shape: {
+				dimension: {
+					maxWidth: 64,
+					maxHeight: 64
+				}
+			},
+			mode: {
+				css: {
+					render: {
+						css: true,
+					},
+				}
+			}
+		}))
+		.pipe(gulp.dest('dev/stylus'))
+		.on('end', () => {
+			gulp.src('dev/stylus/css/svg/*.svg')
+				.pipe(imagemin())
+				.pipe(gulp.dest('build/css/svg'));
+		});
+}
+
 function es6() {
 	return gulp.src('dev/js/**/*.js')
 		.pipe(plumberNotifier())
@@ -119,7 +162,7 @@ function watch() {
 }
 
 exports.clear = clear;
-// exports.sprite = sprite;
+exports.sprite = gulp.parallel(spritePng, spriteSvg);
 exports.move = gulp.parallel(moveFont, moveJS);
 exports.build = gulp.series(html);
 exports.default = gulp.parallel(sync, html, img, css, es6, watch);
