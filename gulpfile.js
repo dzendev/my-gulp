@@ -15,6 +15,9 @@ const nib             = require('nib');
 const rupture         = require('rupture');
 const jeet            = require('jeet');
 const glob            = require('glob');
+const babel           = require('gulp-babel');
+const sourcemaps      = require("gulp-sourcemaps");
+const uglify          = require('gulp-uglify');
 const browserSync     = require('browser-sync');
 const env             = process.env.NODE_ENV;
 
@@ -32,6 +35,7 @@ function moveJS() {
 	return gulp.src([
 			'dev/lib/js/*.js',
 			// './node_modules/babel-polyfill/dist/polyfill.min.js'
+			'./node_modules/@babel/polyfill/dist/polyfill.min.js'
 		])
 		.pipe(newer('build/js'))
 		.pipe(gulp.dest('build/js'));
@@ -70,14 +74,6 @@ function img() {
 	.pipe(gulp.dest('build/img'));
 }
 
-// function css() {
-// 	return gulp.src(['dev/stylus/**/*.styl', '!dev/stylus/**/_*.styl'])
-// 		.pipe(plumberNotifier())
-// 		.pipe(stylus())
-// 		.pipe(gulp.dest('build/css'))
-// 		.pipe(browserSync.reload({ stream: true }));
-// }
-
 function css() {
 	return gulp.src(['dev/stylus/**/*.styl', '!dev/stylus/**/_*.styl'])
 		.pipe(plumberNotifier())
@@ -93,11 +89,32 @@ function css() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function es6() {
+	return gulp.src('dev/js/**/*.js')
+		.pipe(plumberNotifier())
+		.pipe(sourcemaps.init())
+		// .pipe(babel({
+		// 	presets: [
+		// 		["env"]
+		// 	]
+		// }))
+		.pipe(pipeIf(env === 'production', babel({
+			presets: [
+				["env"]
+			]
+		})))
+		.pipe(pipeIf(env === 'production', uglify()))
+		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
+		.pipe(sourcemaps.write("."))
+		.pipe(gulp.dest('build/js'))
+		.pipe(browserSync.reload({ stream: true }));
+}
+
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', html);
 	gulp.watch('dev/img/**/*.*', img);
 	gulp.watch('dev/stylus/**/*.styl', css);
-	// gulp.watch('dev/js/**/*.js', ['es6']);
+	gulp.watch('dev/js/**/*.js', es6);
 	// gulp.watch('dev/coffee/**/*.coffee', ['coffee']);
 }
 
@@ -105,4 +122,4 @@ exports.clear = clear;
 // exports.sprite = sprite;
 exports.move = gulp.parallel(moveFont, moveJS);
 exports.build = gulp.series(html);
-exports.default = gulp.parallel(sync, html, img, css, watch);
+exports.default = gulp.parallel(sync, html, img, css, es6, watch);

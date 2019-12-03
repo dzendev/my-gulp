@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["script.js"],"sourcesContent":["const x = 3;\r\nconsole.log(x);"],"file":"script.js"}
