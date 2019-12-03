@@ -1,0 +1,27 @@
+doctype html
+html(lang="ru")
+head
+	meta(charset="UTF-8")
+	// build:css
+	link(rel="stylesheet", href="css/style.css")
+	// endbuild
+	block title
+		title Page
+body
+	block content
+		h1 Page
+
+	footer
+		block footer
+			p text footer 111
+	block script
+		//- script(src="js/polyfill.min.js")
+		// build:js_app
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.19/system.js")
+		//- script.
+		//- 	SystemJS.import('/js/app.js');
+		//- script(src="js/app.js")
+		// endbuild
+		// build:js_script
+		script(src="js/script.js")
+		// endbuild

@@ -1,0 +1,19 @@
+extends layout.pug
+
+block title
+	title Index page
+
+block content
+	h1 Index page!
+	.content
+		.col
+			img(src="img/gulp.png", alt="")
+		.col
+			img(src="img/subdirectory/nodejs-logo.png", alt="")
+	.wrap_icon
+		span.icon.icon-Char
+		span.icon-svg.svg-wordpress
+		span.svg-font.svg-font-drupal(style="color:red;font-size:60px;")
+
+block append footer
+	p text footer 2
