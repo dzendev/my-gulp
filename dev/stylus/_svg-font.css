@@ -1,0 +1,70 @@
+@font-face {
+	font-family: "svgfont";
+	src: url('../fonts/svgfont.eot');
+	src: url('../fonts/svgfont.eot?#iefix') format('eot'),
+		url('../fonts/svgfont.woff2') format('woff2'),
+		url('../fonts/svgfont.woff') format('woff'),
+		url('../fonts/svgfont.ttf') format('truetype'),
+		url('../fonts/svgfont.svg#svgfont') format('svg');
+}
+
+.svg-font:before {
+	font-family: "svgfont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.svg-font-blogger:before {
+	content: "\E001";
+}
+
+.svg-font-disqus:before {
+	content: "\E002";
+}
+
+.svg-font-drupal:before {
+	content: "\E003";
+}
+
+.svg-font-expression-engine:before {
+	content: "\E004";
+}
+
+.svg-font-html:before {
+	content: "\E005";
+}
+
+.svg-font-joomla:before {
+	content: "\E006";
+}
+
+.svg-font-kirby:before {
+	content: "\E007";
+}
+
+.svg-font-moveabletype:before {
+	content: "\E008";
+}
+
+.svg-font-squarespace:before {
+	content: "\E009";
+}
+
+.svg-font-tumblr:before {
+	content: "\E00A";
+}
+
+.svg-font-typepad:before {
+	content: "\E00B";
+}
+
+.svg-font-wordpress:before {
+	content: "\E00C";
+}

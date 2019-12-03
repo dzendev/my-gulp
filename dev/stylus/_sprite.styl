@@ -1,0 +1,415 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$alert_name = 'Alert';
+$alert_x = 48px;
+$alert_y = 0px;
+$alert_offset_x = -48px;
+$alert_offset_y = 0px;
+$alert_width = 48px;
+$alert_height = 48px;
+$alert_total_width = 288px;
+$alert_total_height = 240px;
+$alert_image = '../img/sprite.png';
+$alert = 48px 0px -48px 0px 48px 48px 288px 240px '../img/sprite.png' 'Alert';
+$applications_name = 'Applications';
+$applications_x = 144px;
+$applications_y = 144px;
+$applications_offset_x = -144px;
+$applications_offset_y = -144px;
+$applications_width = 48px;
+$applications_height = 48px;
+$applications_total_width = 288px;
+$applications_total_height = 240px;
+$applications_image = '../img/sprite.png';
+$applications = 144px 144px -144px -144px 48px 48px 288px 240px '../img/sprite.png' 'Applications';
+$back_name = 'Back';
+$back_x = 0px;
+$back_y = 48px;
+$back_offset_x = 0px;
+$back_offset_y = -48px;
+$back_width = 48px;
+$back_height = 48px;
+$back_total_width = 288px;
+$back_total_height = 240px;
+$back_image = '../img/sprite.png';
+$back = 0px 48px 0px -48px 48px 48px 288px 240px '../img/sprite.png' 'Back';
+$bookmark_name = 'Bookmark';
+$bookmark_x = 48px;
+$bookmark_y = 48px;
+$bookmark_offset_x = -48px;
+$bookmark_offset_y = -48px;
+$bookmark_width = 48px;
+$bookmark_height = 48px;
+$bookmark_total_width = 288px;
+$bookmark_total_height = 240px;
+$bookmark_image = '../img/sprite.png';
+$bookmark = 48px 48px -48px -48px 48px 48px 288px 240px '../img/sprite.png' 'Bookmark';
+$char_name = 'Char';
+$char_x = 96px;
+$char_y = 0px;
+$char_offset_x = -96px;
+$char_offset_y = 0px;
+$char_width = 48px;
+$char_height = 48px;
+$char_total_width = 288px;
+$char_total_height = 240px;
+$char_image = '../img/sprite.png';
+$char = 96px 0px -96px 0px 48px 48px 288px 240px '../img/sprite.png' 'Char';
+$delete_name = 'Delete';
+$delete_x = 96px;
+$delete_y = 48px;
+$delete_offset_x = -96px;
+$delete_offset_y = -48px;
+$delete_width = 48px;
+$delete_height = 48px;
+$delete_total_width = 288px;
+$delete_total_height = 240px;
+$delete_image = '../img/sprite.png';
+$delete = 96px 48px -96px -48px 48px 48px 288px 240px '../img/sprite.png' 'Delete';
+$documents_name = 'Documents';
+$documents_x = 0px;
+$documents_y = 96px;
+$documents_offset_x = 0px;
+$documents_offset_y = -96px;
+$documents_width = 48px;
+$documents_height = 48px;
+$documents_total_width = 288px;
+$documents_total_height = 240px;
+$documents_image = '../img/sprite.png';
+$documents = 0px 96px 0px -96px 48px 48px 288px 240px '../img/sprite.png' 'Documents';
+$download_name = 'Download';
+$download_x = 48px;
+$download_y = 96px;
+$download_offset_x = -48px;
+$download_offset_y = -96px;
+$download_width = 48px;
+$download_height = 48px;
+$download_total_width = 288px;
+$download_total_height = 240px;
+$download_image = '../img/sprite.png';
+$download = 48px 96px -48px -96px 48px 48px 288px 240px '../img/sprite.png' 'Download';
+$favorite_name = 'Favorite';
+$favorite_x = 96px;
+$favorite_y = 96px;
+$favorite_offset_x = -96px;
+$favorite_offset_y = -96px;
+$favorite_width = 48px;
+$favorite_height = 48px;
+$favorite_total_width = 288px;
+$favorite_total_height = 240px;
+$favorite_image = '../img/sprite.png';
+$favorite = 96px 96px -96px -96px 48px 48px 288px 240px '../img/sprite.png' 'Favorite';
+$forward_name = 'Forward';
+$forward_x = 144px;
+$forward_y = 0px;
+$forward_offset_x = -144px;
+$forward_offset_y = 0px;
+$forward_width = 48px;
+$forward_height = 48px;
+$forward_total_width = 288px;
+$forward_total_height = 240px;
+$forward_image = '../img/sprite.png';
+$forward = 144px 0px -144px 0px 48px 48px 288px 240px '../img/sprite.png' 'Forward';
+$hd_name = 'HD';
+$hd_x = 144px;
+$hd_y = 48px;
+$hd_offset_x = -144px;
+$hd_offset_y = -48px;
+$hd_width = 48px;
+$hd_height = 48px;
+$hd_total_width = 288px;
+$hd_total_height = 240px;
+$hd_image = '../img/sprite.png';
+$hd = 144px 48px -144px -48px 48px 48px 288px 240px '../img/sprite.png' 'HD';
+$home_name = 'Home';
+$home_x = 144px;
+$home_y = 96px;
+$home_offset_x = -144px;
+$home_offset_y = -96px;
+$home_width = 48px;
+$home_height = 48px;
+$home_total_width = 288px;
+$home_total_height = 240px;
+$home_image = '../img/sprite.png';
+$home = 144px 96px -144px -96px 48px 48px 288px 240px '../img/sprite.png' 'Home';
+$mail_name = 'Mail';
+$mail_x = 0px;
+$mail_y = 144px;
+$mail_offset_x = 0px;
+$mail_offset_y = -144px;
+$mail_width = 48px;
+$mail_height = 48px;
+$mail_total_width = 288px;
+$mail_total_height = 240px;
+$mail_image = '../img/sprite.png';
+$mail = 0px 144px 0px -144px 48px 48px 288px 240px '../img/sprite.png' 'Mail';
+$package_name = 'Package';
+$package_x = 48px;
+$package_y = 144px;
+$package_offset_x = -48px;
+$package_offset_y = -144px;
+$package_width = 48px;
+$package_height = 48px;
+$package_total_width = 288px;
+$package_total_height = 240px;
+$package_image = '../img/sprite.png';
+$package = 48px 144px -48px -144px 48px 48px 288px 240px '../img/sprite.png' 'Package';
+$rss_name = 'RSS';
+$rss_x = 0px;
+$rss_y = 0px;
+$rss_offset_x = 0px;
+$rss_offset_y = 0px;
+$rss_width = 48px;
+$rss_height = 48px;
+$rss_total_width = 288px;
+$rss_total_height = 240px;
+$rss_image = '../img/sprite.png';
+$rss = 0px 0px 0px 0px 48px 48px 288px 240px '../img/sprite.png' 'RSS';
+$refresh_name = 'Refresh';
+$refresh_x = 96px;
+$refresh_y = 144px;
+$refresh_offset_x = -96px;
+$refresh_offset_y = -144px;
+$refresh_width = 48px;
+$refresh_height = 48px;
+$refresh_total_width = 288px;
+$refresh_total_height = 240px;
+$refresh_image = '../img/sprite.png';
+$refresh = 96px 144px -96px -144px 48px 48px 288px 240px '../img/sprite.png' 'Refresh';
+$search_name = 'Search';
+$search_x = 192px;
+$search_y = 0px;
+$search_offset_x = -192px;
+$search_offset_y = 0px;
+$search_width = 48px;
+$search_height = 48px;
+$search_total_width = 288px;
+$search_total_height = 240px;
+$search_image = '../img/sprite.png';
+$search = 192px 0px -192px 0px 48px 48px 288px 240px '../img/sprite.png' 'Search';
+$security_name = 'Security';
+$security_x = 192px;
+$security_y = 48px;
+$security_offset_x = -192px;
+$security_offset_y = -48px;
+$security_width = 48px;
+$security_height = 48px;
+$security_total_width = 288px;
+$security_total_height = 240px;
+$security_image = '../img/sprite.png';
+$security = 192px 48px -192px -48px 48px 48px 288px 240px '../img/sprite.png' 'Security';
+$select_name = 'Select';
+$select_x = 192px;
+$select_y = 96px;
+$select_offset_x = -192px;
+$select_offset_y = -96px;
+$select_width = 48px;
+$select_height = 48px;
+$select_total_width = 288px;
+$select_total_height = 240px;
+$select_image = '../img/sprite.png';
+$select = 192px 96px -192px -96px 48px 48px 288px 240px '../img/sprite.png' 'Select';
+$settings_name = 'Settings';
+$settings_x = 192px;
+$settings_y = 144px;
+$settings_offset_x = -192px;
+$settings_offset_y = -144px;
+$settings_width = 48px;
+$settings_height = 48px;
+$settings_total_width = 288px;
+$settings_total_height = 240px;
+$settings_image = '../img/sprite.png';
+$settings = 192px 144px -192px -144px 48px 48px 288px 240px '../img/sprite.png' 'Settings';
+$speaker_name = 'Speaker';
+$speaker_x = 0px;
+$speaker_y = 192px;
+$speaker_offset_x = 0px;
+$speaker_offset_y = -192px;
+$speaker_width = 48px;
+$speaker_height = 48px;
+$speaker_total_width = 288px;
+$speaker_total_height = 240px;
+$speaker_image = '../img/sprite.png';
+$speaker = 0px 192px 0px -192px 48px 48px 288px 240px '../img/sprite.png' 'Speaker';
+$stats_name = 'Stats';
+$stats_x = 48px;
+$stats_y = 192px;
+$stats_offset_x = -48px;
+$stats_offset_y = -192px;
+$stats_width = 48px;
+$stats_height = 48px;
+$stats_total_width = 288px;
+$stats_total_height = 240px;
+$stats_image = '../img/sprite.png';
+$stats = 48px 192px -48px -192px 48px 48px 288px 240px '../img/sprite.png' 'Stats';
+$stop_name = 'Stop';
+$stop_x = 96px;
+$stop_y = 192px;
+$stop_offset_x = -96px;
+$stop_offset_y = -192px;
+$stop_width = 48px;
+$stop_height = 48px;
+$stop_total_width = 288px;
+$stop_total_height = 240px;
+$stop_image = '../img/sprite.png';
+$stop = 96px 192px -96px -192px 48px 48px 288px 240px '../img/sprite.png' 'Stop';
+$system_name = 'System';
+$system_x = 144px;
+$system_y = 192px;
+$system_offset_x = -144px;
+$system_offset_y = -192px;
+$system_width = 48px;
+$system_height = 48px;
+$system_total_width = 288px;
+$system_total_height = 240px;
+$system_image = '../img/sprite.png';
+$system = 144px 192px -144px -192px 48px 48px 288px 240px '../img/sprite.png' 'System';
+$temporary_name = 'Temporary';
+$temporary_x = 192px;
+$temporary_y = 192px;
+$temporary_offset_x = -192px;
+$temporary_offset_y = -192px;
+$temporary_width = 48px;
+$temporary_height = 48px;
+$temporary_total_width = 288px;
+$temporary_total_height = 240px;
+$temporary_image = '../img/sprite.png';
+$temporary = 192px 192px -192px -192px 48px 48px 288px 240px '../img/sprite.png' 'Temporary';
+$upload_name = 'Upload';
+$upload_x = 240px;
+$upload_y = 0px;
+$upload_offset_x = -240px;
+$upload_offset_y = 0px;
+$upload_width = 48px;
+$upload_height = 48px;
+$upload_total_width = 288px;
+$upload_total_height = 240px;
+$upload_image = '../img/sprite.png';
+$upload = 240px 0px -240px 0px 48px 48px 288px 240px '../img/sprite.png' 'Upload';
+$user_name = 'User';
+$user_x = 240px;
+$user_y = 48px;
+$user_offset_x = -240px;
+$user_offset_y = -48px;
+$user_width = 48px;
+$user_height = 48px;
+$user_total_width = 288px;
+$user_total_height = 240px;
+$user_image = '../img/sprite.png';
+$user = 240px 48px -240px -48px 48px 48px 288px 240px '../img/sprite.png' 'User';
+$video_name = 'Video';
+$video_x = 240px;
+$video_y = 96px;
+$video_offset_x = -240px;
+$video_offset_y = -96px;
+$video_width = 48px;
+$video_height = 48px;
+$video_total_width = 288px;
+$video_total_height = 240px;
+$video_image = '../img/sprite.png';
+$video = 240px 96px -240px -96px 48px 48px 288px 240px '../img/sprite.png' 'Video';
+$weather_name = 'Weather';
+$weather_x = 240px;
+$weather_y = 144px;
+$weather_offset_x = -240px;
+$weather_offset_y = -144px;
+$weather_width = 48px;
+$weather_height = 48px;
+$weather_total_width = 288px;
+$weather_total_height = 240px;
+$weather_image = '../img/sprite.png';
+$weather = 240px 144px -240px -144px 48px 48px 288px 240px '../img/sprite.png' 'Weather';
+$web_name = 'Web';
+$web_x = 240px;
+$web_y = 192px;
+$web_offset_x = -240px;
+$web_offset_y = -192px;
+$web_width = 48px;
+$web_height = 48px;
+$web_total_width = 288px;
+$web_total_height = 240px;
+$web_image = '../img/sprite.png';
+$web = 240px 192px -240px -192px 48px 48px 288px 240px '../img/sprite.png' 'Web';
+$spritesheet_width = 288px;
+$spritesheet_height = 240px;
+$spritesheet_image = '../img/sprite.png';
+$spritesheet_sprites = $alert $applications $back $bookmark $char $delete $documents $download $favorite $forward $hd $home $mail $package $rss $refresh $search $security $select $settings $speaker $stats $stop $system $temporary $upload $user $video $weather $web;
+$spritesheet = 288px 240px '../img/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

@@ -13,6 +13,21 @@ function clear() {
 	return del(['build/*']);
 }
 
+function moveFont() {
+	return gulp.src('dev/lib/fonts/*')
+		.pipe(newer('build/fonts'))
+		.pipe(gulp.dest('build/fonts'));
+}
+
+function moveJS() {
+	return gulp.src([
+			'dev/lib/js/*.js',
+			// './node_modules/babel-polyfill/dist/polyfill.min.js'
+		])
+		.pipe(newer('build/js'))
+		.pipe(gulp.dest('build/js'));
+}
+
 function sync() {
 	return browserSync({
 		server: {
@@ -55,6 +70,7 @@ function watch() {
 }
 
 exports.clear = clear;
-exports.html = html;
+// exports.sprite = sprite;
+exports.move = gulp.parallel(moveFont, moveJS);
 exports.build = gulp.series(html);
 exports.default = gulp.parallel(sync, html, img, watch);
