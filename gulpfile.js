@@ -1,9 +1,11 @@
-const gulp            = require('gulp');
 const del             = require('del');
+const gulp            = require('gulp');
+const pipeIf          = require('gulp-if');
 const pug             = require('gulp-pug');
 const plumberNotifier = require('gulp-plumber-notifier');
 const htmlReplace     = require('gulp-html-replace');
-const pipeIf          = require('gulp-if');
+const imagemin        = require('gulp-imagemin');
+const newer           = require('gulp-newer');
 const browserSync     = require('browser-sync');
 const env             = process.env.NODE_ENV;
 
@@ -33,11 +35,26 @@ function html() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function img() {
+	return gulp.src([
+		'dev/img/**/*.*',
+		'!dev/img/sprite-svg/*.*',
+		'!dev/img/sprite-png/*.*'
+	])
+	.pipe(newer('build/img'))
+	.pipe(pipeIf(env === 'production', imagemin()))
+	.pipe(gulp.dest('build/img'));
+}
+
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', html);
+	gulp.watch('dev/img/**/*.*', img);
+	// gulp.watch('dev/stylus/**/*.styl', ['stylus']);
+	// gulp.watch('dev/js/**/*.js', ['es6']);
+	// gulp.watch('dev/coffee/**/*.coffee', ['coffee']);
 }
 
 exports.clear = clear;
 exports.html = html;
 exports.build = gulp.series(html);
-exports.default = gulp.parallel(sync, html, watch);
+exports.default = gulp.parallel(sync, html, img, watch);
