@@ -1,34 +1,37 @@
-const del             = require('del');
-const gulp            = require('gulp');
-const pipeIf          = require('gulp-if');
-const pug             = require('gulp-pug');
-const plumberNotifier = require('gulp-plumber-notifier');
-const htmlReplace     = require('gulp-html-replace');
-const imagemin        = require('gulp-imagemin');
-const spritesmith     = require('gulp.spritesmith');
-const svgSprite       = require('gulp-svg-sprite');
-const inlineFonts     = require('gulp-inline-fonts');
-const buffer          = require('vinyl-buffer');
-const newer           = require('gulp-newer');
-const stylus          = require('gulp-stylus');
-const gcmq            = require('gulp-group-css-media-queries');
-const rename          = require('gulp-rename');
-const cssnano         = require('gulp-cssnano');
-const uncss           = require('gulp-uncss-sp');
-const nib             = require('nib');
-const rupture         = require('rupture');
-const jeet            = require('jeet');
-const glob            = require('glob');
-const babel           = require('gulp-babel');
-const uglify          = require('gulp-uglify');
-const	coffee          = require('gulp-coffee');
-const iconfont        = require('gulp-iconfont');
-const iconfontCss     = require('gulp-iconfont-css');
-const webpack         = require('webpack-stream');
-const browserSync     = require('browser-sync');
-const sass            = require('gulp-sass');
-sass.compiler         = require('node-sass');
-const env             = process.env.NODE_ENV;
+const del              = require('del');
+const gulp             = require('gulp');
+const pipeIf           = require('gulp-if');
+const pug              = require('gulp-pug');
+const plumberNotifier  = require('gulp-plumber-notifier');
+const htmlReplace      = require('gulp-html-replace');
+const image64          = require('gulp-image64');
+const inlineCss        = require('gulp-inline-css');
+const rewriteImagePath = require('gulp-rewrite-image-path');
+const imagemin         = require('gulp-imagemin');
+const spritesmith      = require('gulp.spritesmith');
+const svgSprite        = require('gulp-svg-sprite');
+const inlineFonts      = require('gulp-inline-fonts');
+const buffer           = require('vinyl-buffer');
+const newer            = require('gulp-newer');
+const stylus           = require('gulp-stylus');
+const gcmq             = require('gulp-group-css-media-queries');
+const rename           = require('gulp-rename');
+const cssnano          = require('gulp-cssnano');
+const uncss            = require('gulp-uncss-sp');
+const nib              = require('nib');
+const rupture          = require('rupture');
+const jeet             = require('jeet');
+const glob             = require('glob');
+const babel            = require('gulp-babel');
+const uglify           = require('gulp-uglify');
+const	coffee           = require('gulp-coffee');
+const iconfont         = require('gulp-iconfont');
+const iconfontCss      = require('gulp-iconfont-css');
+const webpack          = require('webpack-stream');
+const browserSync      = require('browser-sync');
+const sass             = require('gulp-sass');
+sass.compiler          = require('node-sass');
+const env              = process.env.NODE_ENV;
 
 function clear() {
 	return del(['build/*']);
@@ -70,6 +73,14 @@ function html() {
 		})))
 		.pipe(gulp.dest('build'))
 		.pipe(browserSync.reload({ stream: true }));
+}
+
+function email() {
+	return gulp.src(['build/index.html'])
+		.pipe(rewriteImagePath({path:"build"}))
+		.pipe(inlineCss())
+		.pipe(image64())
+		.pipe(gulp.dest('build/email'));
 }
 
 function img() {
@@ -256,6 +267,7 @@ exports.clear = clear;
 exports.sprite = gulp.parallel(spritePng, spriteSvg);
 exports.font = gulp.parallel(svgToFont, fontBase64);
 exports.move = gulp.parallel(moveFont, moveJS);
+exports.email = email;
 
 const task = [
 	html,
