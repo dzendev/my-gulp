@@ -19,12 +19,14 @@ const rupture         = require('rupture');
 const jeet            = require('jeet');
 const glob            = require('glob');
 const babel           = require('gulp-babel');
-const sourcemaps      = require("gulp-sourcemaps");
+// const sourcemaps      = require("gulp-sourcemaps");
 const uglify          = require('gulp-uglify');
 const iconfont        = require('gulp-iconfont');
 const iconfontCss     = require('gulp-iconfont-css');
 const webpack         = require('webpack-stream');
 const browserSync     = require('browser-sync');
+const sass            = require('gulp-sass');
+sass.compiler         = require('node-sass');
 const env             = process.env.NODE_ENV;
 
 function clear() {
@@ -84,6 +86,21 @@ function css() {
 	return gulp.src(['dev/stylus/**/*.styl', '!dev/stylus/**/_*.styl'])
 		.pipe(plumberNotifier())
 		.pipe(stylus({ use: [nib(), rupture(), jeet()], 'include css': true}))
+		.pipe(pipeIf(env === 'production', uncss({
+				// html: ['./build/index.html']
+				html: glob.sync('./build/**/*.html')
+		})))
+		.pipe(pipeIf(env === 'production', gcmq()))
+		.pipe(pipeIf(env === 'production', cssnano()))
+		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
+		.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.reload({ stream: true }));
+}
+
+function sassToCss() {
+	return gulp.src('dev/sass/**/*.scss')
+		.pipe(plumberNotifier())
+		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(pipeIf(env === 'production', uncss({
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')
@@ -159,14 +176,9 @@ function svgToFont() {
 }
 
 function es6() {
-	return gulp.src('dev/js/**/*.js')
+	return gulp.src('dev/js/**/*.js', { sourcemaps: true })
 		.pipe(plumberNotifier())
-		.pipe(sourcemaps.init())
-		// .pipe(babel({
-		// 	presets: [
-		// 		["env"]
-		// 	]
-		// }))
+		// .pipe(sourcemaps.init())
 		.pipe(pipeIf(env === 'production', babel({
 			presets: [
 				["env"]
@@ -174,8 +186,8 @@ function es6() {
 		})))
 		.pipe(pipeIf(env === 'production', uglify()))
 		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
-		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest('build/js'))
+		// .pipe(sourcemaps.write("."))
+		.pipe(gulp.dest('build/js', { sourcemaps: true }))
 		.pipe(browserSync.reload({ stream: true }));
 }
 
@@ -187,7 +199,7 @@ function es6modules() {
 				app: env === 'production' ? ['babel-polyfill', './dev/js/app.js'] : './dev/js/app.js',
 				script: './dev/js/script.js'
 			},
-			mode: "development",
+			mode: env,
 			output: {
 				filename: '[name].js',
 			}
@@ -206,8 +218,10 @@ function es6modules() {
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', html);
 	gulp.watch('dev/img/**/*.*', img);
-	gulp.watch('dev/stylus/**/*.styl', css);
+	// gulp.watch('dev/stylus/**/*.styl', css);
+	gulp.watch('dev/sass/**/*.scss', sassToCss);
 	gulp.watch('dev/js/**/*.js', es6);
+	// gulp.watch('dev/js/**/*.js', es6modules);
 	// gulp.watch('dev/coffee/**/*.coffee', ['coffee']);
 }
 
@@ -219,12 +233,13 @@ exports.move = gulp.parallel(moveFont, moveJS);
 const task = [
 	html,
 	img,
-	css,
-	// es6,
-	es6modules
+	// css,
+	sassToCss,
+	es6,
+	// es6modules
 ];
 
-exports.build = gulp.series(clear, gulp.parallel(html, img, css, es6));
+exports.build = gulp.series(clear, gulp.parallel(...task));
 const dev = gulp.parallel(sync, ...task, watch);
 exports.dev = dev;
 exports.default = dev;
