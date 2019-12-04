@@ -1,6 +1,6 @@
 (function() {
   var Animal, r, rr, x;
-  x = 20;
+  x = 30;
   r = function() {
     return 320;
   };

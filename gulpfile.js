@@ -19,8 +19,8 @@ const rupture         = require('rupture');
 const jeet            = require('jeet');
 const glob            = require('glob');
 const babel           = require('gulp-babel');
-// const sourcemaps      = require("gulp-sourcemaps");
 const uglify          = require('gulp-uglify');
+const	coffee          = require('gulp-coffee');
 const iconfont        = require('gulp-iconfont');
 const iconfontCss     = require('gulp-iconfont-css');
 const webpack         = require('webpack-stream');
@@ -82,7 +82,7 @@ function img() {
 	.pipe(gulp.dest('build/img'));
 }
 
-function css() {
+function stylusToCss() {
 	return gulp.src(['dev/stylus/**/*.styl', '!dev/stylus/**/_*.styl'])
 		.pipe(plumberNotifier())
 		.pipe(stylus({ use: [nib(), rupture(), jeet()], 'include css': true}))
@@ -215,14 +215,34 @@ function es6modules() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
+function coffeeToJs() {
+	var configCoffee = {
+		bare: true,
+		// coffee: require('coffeescript')
+	};
+
+	if(env === 'production'){
+		configCoffee['transpile'] = {
+			presets: [
+				["env", {"modules": false}]
+			]
+		};
+	}
+
+	return gulp.src('dev/coffee/**/*.coffee')
+		.pipe(plumberNotifier())
+		.pipe(coffee(configCoffee))
+		.pipe(gulp.dest('dev/js'));
+}
+
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', html);
 	gulp.watch('dev/img/**/*.*', img);
-	// gulp.watch('dev/stylus/**/*.styl', css);
+	// gulp.watch('dev/stylus/**/*.styl', stylusToCss);
 	gulp.watch('dev/sass/**/*.scss', sassToCss);
 	gulp.watch('dev/js/**/*.js', es6);
 	// gulp.watch('dev/js/**/*.js', es6modules);
-	// gulp.watch('dev/coffee/**/*.coffee', ['coffee']);
+	gulp.watch('dev/coffee/**/*.coffee', coffeeToJs);
 }
 
 exports.clear = clear;
@@ -233,8 +253,9 @@ exports.move = gulp.parallel(moveFont, moveJS);
 const task = [
 	html,
 	img,
-	// css,
+	// stylusToCss,
 	sassToCss,
+	coffeeToJs,
 	es6,
 	// es6modules
 ];
