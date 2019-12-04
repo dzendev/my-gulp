@@ -34,6 +34,7 @@
     "gulp-iconfont-css": "^3.0.0",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^6.2.0",
+    "gulp-inline-fonts": "^1.2.1",
     "gulp-newer": "^1.4.0",
     "gulp-plumber-notifier": "^0.1.0",
     "gulp-pug": "^4.0.1",

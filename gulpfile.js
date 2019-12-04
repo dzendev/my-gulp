@@ -7,6 +7,7 @@ const htmlReplace     = require('gulp-html-replace');
 const imagemin        = require('gulp-imagemin');
 const spritesmith     = require('gulp.spritesmith');
 const svgSprite       = require('gulp-svg-sprite');
+const inlineFonts     = require('gulp-inline-fonts');
 const buffer          = require('vinyl-buffer');
 const newer           = require('gulp-newer');
 const stylus          = require('gulp-stylus');
@@ -175,6 +176,12 @@ function svgToFont() {
 		.pipe(gulp.dest('build/fonts/'));
 }
 
+function fontBase64() {
+	return gulp.src(['dev/lib/fonts/*'])
+		.pipe(inlineFonts({ name: 'NairiNormal' }))
+		.pipe(gulp.dest('dev/stylus/'));
+}
+
 function es6() {
 	return gulp.src('dev/js/**/*.js', { sourcemaps: true })
 		.pipe(plumberNotifier())
@@ -247,7 +254,7 @@ function watch() {
 
 exports.clear = clear;
 exports.sprite = gulp.parallel(spritePng, spriteSvg);
-exports.font = svgToFont;
+exports.font = gulp.parallel(svgToFont, fontBase64);
 exports.move = gulp.parallel(moveFont, moveJS);
 
 const task = [
