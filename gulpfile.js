@@ -43,10 +43,10 @@ function moveFont() {
 		.pipe(gulp.dest('build/fonts'));
 }
 
-function moveJS() {
+function moveJs() {
 	return gulp.src([
 			'dev/lib/js/*.js',
-			// './node_modules/babel-polyfill/dist/polyfill.min.js'
+			'./node_modules/jquery/dist/jquery.min.js',
 			'./node_modules/@babel/polyfill/dist/polyfill.min.js'
 		])
 		.pipe(newer('build/js'))
@@ -62,10 +62,22 @@ function sync() {
 	});
 }
 
-function html() {
+function pugToHtml() {
 	return gulp.src(['dev/pug/**/*.pug', '!dev/pug/layout.pug'])
 		.pipe(plumberNotifier())
 		.pipe(pug({ pretty: true }))
+		.pipe(pipeIf(env === 'production', htmlReplace({
+			css: 'css/style.min.css',
+			js_app: 'js/app.min.js',
+			js_script: 'js/script.min.js'
+		})))
+		.pipe(gulp.dest('build'))
+		.pipe(browserSync.reload({ stream: true }));
+}
+
+function html() {
+	return gulp.src('dev/html/*.html')
+		.pipe(plumberNotifier())
 		.pipe(pipeIf(env === 'production', htmlReplace({
 			css: 'css/style.min.css',
 			js_app: 'js/app.min.js',
@@ -235,8 +247,7 @@ function es6modules() {
 
 function coffeeToJs() {
 	var configCoffee = {
-		bare: true,
-		// coffee: require('coffeescript')
+		bare: true
 	};
 
 	if(env === 'production'){
@@ -254,32 +265,34 @@ function coffeeToJs() {
 }
 
 function watch() {
-	gulp.watch('dev/pug/**/*.pug', html);
+	// gulp.watch('dev/pug/**/*.pug', pugToHtml);
+	gulp.watch('dev/html/**/*.html', html);
 	gulp.watch('dev/img/**/*.*', img);
-	// gulp.watch('dev/stylus/**/*.styl', stylusToCss);
-	gulp.watch('dev/sass/**/*.scss', sassToCss);
+	gulp.watch('dev/stylus/**/*.styl', stylusToCss);
+	// gulp.watch('dev/sass/**/*.scss', sassToCss);
 	gulp.watch('dev/js/**/*.js', es6);
 	// gulp.watch('dev/js/**/*.js', es6modules);
 	gulp.watch('dev/coffee/**/*.coffee', coffeeToJs);
 }
 
-exports.clear = clear;
-exports.sprite = gulp.parallel(spritePng, spriteSvg);
-exports.font = gulp.parallel(svgToFont, fontBase64);
-exports.move = gulp.parallel(moveFont, moveJS);
-exports.email = email;
+exports.clear = clear; // очистка папки build
+exports.sprite = gulp.parallel(spritePng, spriteSvg); // создание спрайтов png и svg
+exports.font = gulp.parallel(svgToFont, fontBase64); // созадние из svg шрифта и преобразование шрифта в base64
+exports.move = gulp.parallel(moveFont, moveJs); // перемещение шрифтов и js библиотек
+exports.email = email; // генерация email письма из html
 
 const task = [
+	// pugToHtml,
 	html,
 	img,
-	// stylusToCss,
-	sassToCss,
-	coffeeToJs,
+	stylusToCss,
+	// sassToCss,
+	// coffeeToJs,
 	es6,
 	// es6modules
 ];
 
-exports.build = gulp.series(clear, gulp.parallel(...task));
+exports.build = gulp.series(clear, move, gulp.parallel(...task));
 const dev = gulp.parallel(sync, ...task, watch);
 exports.dev = dev;
 exports.default = dev;
